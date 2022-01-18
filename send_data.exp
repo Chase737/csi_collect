@@ -1,0 +1,14 @@
+#! /usr/bin/expect
+set username "josyl"
+set address "192.168.6.5"
+set passwd "josylrocamora"
+set filename [lindex $argv 0]
+
+spawn scp /home/debian/Desktop/${filename} $username@$address:~/${filename}
+
+expect {
+"*password*" {send "$passwd\n"}
+
+"*connecting*" {send "yes\n"}
+}
+

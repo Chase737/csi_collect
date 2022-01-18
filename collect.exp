@@ -1,0 +1,8 @@
+#! /usr/bin/expect
+set prefix "/home/debian/"
+set passwd "debian"
+set time_stp [lindex $argv 0]
+spawn timeout 5s ${prefix}linux-80211n-csitool-supplementary/netlink/log_to_file /home/debian/Desktop/data_files/$time_stp
+expect { 
+"*password*" {send "$passwd\n"}
+}

@@ -1,0 +1,10 @@
+#! /usr/bin/expect
+set timeout -1
+set user "josyl"
+set move_files_cur [lindex $argv 0]
+set passwd "josylrocamora"
+set add "192.168.6.5"
+spawn bash -c "scp /home/debian/Desktop/data_files/${move_files_cur} $user@$add:/home/josyl/data_collected/"
+expect "*password:" { send "$passwd\r"}
+expect "100%" {send_user "file sent done! `date`\n"}
+expect eof
