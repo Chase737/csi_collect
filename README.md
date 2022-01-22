@@ -88,3 +88,5 @@ Step 2: In laptop, after connecting to AP and setting up the ip configration, op
 Step 3: In hmb pro, first run ```bash transfer.sh``` command in one terminal and then run ```bash receiver.sh``` command in the other terminal.
 
 Step 4: Press Ctrl+Z to stop collectting csi or set timeout in the commands before running them. 
+
+Note: collect.exp, receiver.sh, te.ss, trans.exp, transfer.sh should place in the same folder in hmb pro.
