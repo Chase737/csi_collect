@@ -50,7 +50,9 @@ sudo chmod 777 file_received_path
 [(Back to top)](#table-of-contents)
 
 Row 2: Change "/home/debian/" to be the absolute path of the folder **linux-80211n-csitool-supplementary**. The double inverted commas "" need to be retained.
+
 Row 3: Change "password" to be the password of user. The double inverted commas "" need to be retained.
+
 Row 5: The time after timeout is the time you want to stop the collection, you can change it to any value you want to set.
 
 ### receiver.sh
@@ -62,20 +64,27 @@ Row 2 & 4: Change the ip address to be the ip of hmb pro
 [(Back to top)](#table-of-contents)
 
 Row 3: Change "username" to be the username of the receiver to which we want to transfer the csi files. The double inverted commas "" need to be retained.
+
 Row 5: Change "password" to be the password of user. The double inverted commas "" need to be retained.
+
 Row 6: Change "ip addr" to be the ip of the receiver. The double inverted commas "" need to be retained.
+
 Row 7: Change the path after "scp" to be **file_path** (create in [Folders need to create](#folders-need-to-create)); and change the path after "$user@$add:" to be **file_received_path** (create in [Folders need to create](#folders-need-to-create)).
 
 ### transfer.sh
 [(Back to top)](#table-of-contents)
 
 Row 3: data_path=**file_path**
+
 Row 15: Change the path after {filename} to be **file_sent_path** (create in [Folders need to create](#folders-need-to-create)).
 
 # Collection process
 [(Back to top)](#table-of-contents)
 
 Step 1: In hmb pro, run csi-tool initialization command before data collection. Then open two terminals and enter into root mode.
+
 Step 2: In laptop, after connecting to AP and setting up the ip configration, open a terminal and enter into root mode and start running ```ping``` command to keep sending packages hmb pro (just set parameter ```-i```)
+
 Step 3: In hmb pro, first run ```bash transfer.sh``` command in one terminal and then run ```bash receiver.sh``` command in the other terminal.
+
 Step 4: Press Ctrl+Z to stop collectting csi or set timeout in the commands before running them. 
